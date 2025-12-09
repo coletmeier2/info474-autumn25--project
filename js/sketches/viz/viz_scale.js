@@ -62,7 +62,7 @@
             let headerY = topMargin - 35;
             p.textAlign(p.CENTER);
             p.text("Eligible People", leftMargin - 95, headerY);
-            p.text("(Thousands)", leftMargin - 95, headerY + 18); // slightly more spacing for 2-line
+            p.text("(k = Thousands)", leftMargin - 95, headerY + 18); // slightly more spacing for 2-line
             p.text("State", leftMargin - 5, headerY);
             p.textAlign(p.LEFT);
             p.text("Participation Rate (%)", leftMargin + 145, headerY);
@@ -84,7 +84,6 @@
                 // Eligible dot
                 p.noStroke();
                 p.fill(150, 150, 150, 180);
-                p.ellipse(xEligible, y, 13, 13); // bigger
                 // Participating dot
                 p.fill(50, 180, 50, 200);
                 p.ellipse(xParticipating, y, 13, 13); // bigger
@@ -117,17 +116,18 @@
             p.noStroke();
             p.textSize(16);
             p.textAlign(p.CENTER);
-            p.text("Participation Percentage (%)", w / 2 + 75, chartHeight - bottomMargin + 60);
+            p.textStyle(p.BOLD);
+            p.text("Participation Percentage Amongst Eligible Kids (%)", w / 2 + 75, chartHeight - bottomMargin + 60);
+            p.textSize(14);
+            p.text("* States not included are considered above the US average", w / 2 + 75, chartHeight - bottomMargin + 80);
 
             // Legend (slightly bigger)
             let legendX = w - rightMargin + 25;
             let legendY = topMargin - 20;
             p.fill(150, 150, 150, 180);
-            p.ellipse(legendX, legendY, 16, 16);
             p.fill(0);
             p.textAlign(p.LEFT);
             p.textSize(14);
-            p.text("Eligible (100%)", legendX + 18, legendY + 5);
             p.fill(50, 180, 50, 200);
             p.ellipse(legendX, legendY + 25, 16, 16);
             p.fill(0);
